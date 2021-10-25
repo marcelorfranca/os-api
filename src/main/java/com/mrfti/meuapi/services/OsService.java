@@ -57,8 +57,8 @@ public class OsService {
 		OS newObj = new OS();
 		newObj.setId(obj.getId());
 		newObj.setObservacoes(obj.getObservacoes());
-		newObj.setPrioridade(Prioridade.toEnum(obj.getPrioridade()));
-		newObj.setStatus(Status.toEnum(obj.getStatus()));
+		newObj.setPrioridade(Prioridade.toEnum(obj.getPrioridade().getCod())); // add getCod para front end
+		newObj.setStatus(Status.toEnum(obj.getStatus().getCod())); // add getCod para front end
 
 		Tecnico tec = tecnicoService.findById(obj.getTecnico());
 		Cliente cli = clienteService.findById(obj.getCliente());
